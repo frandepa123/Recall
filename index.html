@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recall Insiders - Plataforma de Agencias de Autos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-main">
+        <!-- Auth Section -->
+        <div id="auth-section" class="auth-section active">
+            <div class="auth-card">
+                <h1>Recall Insiders</h1>
+                <p class="subtitle">Gestión de turnos, consultas y perfiles para agencias automotrices</p>
+
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Iniciar Sesion</button>
+                    <button class="tab-btn" data-tab="register">Registrarse</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="login-email">Correo Electronico</label>
+                        <input type="email" id="login-email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contrasena</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Iniciar Sesion</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Correo Electronico</label>
+                        <input type="email" id="register-email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contrasena</label>
+                        <input type="password" id="register-password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-type">Eres?</label>
+                        <select id="user-type" required>
+                            <option value="">-- Selecciona --</option>
+                            <option value="buyer">Ejecutivos</option>
+                            <option value="agency">Agencia</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Registrarse</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="dashboard-section">
+            <nav class="navbar">
+                <div class="nav-brand">Recall Insiders</div>
+                <div class="nav-menu">
+                    <button class="nav-btn" data-page="profile">Mi Perfil</button>
+                    <button class="nav-btn" data-page="consultations">Consultas</button>
+                    <button class="nav-btn logout-btn" id="logout-btn">Cerrar Sesion</button>
+                </div>
+            </nav>
+
+            <div class="dashboard-content">
+                <!-- Buyer Profile -->
+                <div id="buyer-profile-page" class="page-content active">
+                    <div class="page-header">
+                        <h2>Mi Perfil de Ejecutivos</h2>
+                        <button class="btn-secondary" id="edit-buyer-btn">Editar Informacion</button>
+                    </div>
+                    <div id="buyer-info-display" class="info-display"></div>
+                </div>
+
+                <!-- Buyer Form -->
+                <div id="buyer-form-page" class="page-content">
+                    <form id="buyer-data-form" class="data-form">
+                        <h2>Informacion del Ejecutivos</h2>
+                        
+                        <fieldset>
+                            <legend>Informacion Personal</legend>
+                            <div class="form-group">
+                                <label for="buyer-phone">Telefono</label>
+                                <input type="tel" id="buyer-phone" placeholder="+54 9 11 1234 5678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="buyer-city">Ciudad</label>
+                                <input type="text" id="buyer-city" placeholder="Ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="buyer-address">Dirección</label>
+                                <input type="text" id="buyer-address" placeholder="Dirección completa" required>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Guardar Informacion</button>
+                            <button type="button" class="btn-secondary" id="cancel-buyer-btn">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Agency Profile -->
+                <div id="agency-profile-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Mi Perfil de Agencia</h2>
+                        <button class="btn-secondary" id="edit-agency-btn">Editar Informacion</button>
+                    </div>
+                    <div id="agency-info-display" class="info-display"></div>
+                </div>
+
+                <!-- Agency Form -->
+                <div id="agency-form-page" class="page-content">
+                    <form id="agency-data-form" class="data-form">
+                        <h2>Informacion de la Agencia</h2>
+                        
+                        <fieldset>
+                            <legend>Informacion de la Empresa</legend>
+                            <div class="form-group">
+                                <label for="agency-name">Nombre de la Agencia</label>
+                                <input type="text" id="agency-name" placeholder="Agencia de Autos" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agency-phone">Telefono</label>
+                                <input type="tel" id="agency-phone" placeholder="555-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agency-address">Direccion</label>
+                                <input type="text" id="agency-address" placeholder="Calle Principal 123" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agency-city">Ciudad</label>
+                                <input type="text" id="agency-city" placeholder="Ciudad" required>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Guardar Informacion</button>
+                            <button type="button" class="btn-secondary" id="cancel-agency-btn">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Consultations Page -->
+                <div id="consultations-page" class="page-content">
+                    <div class="page-header">
+                        <h2>Consultas</h2>
+                        <button class="btn-secondary" id="new-consultation-btn">Nueva Consulta</button>
+                    </div>
+                    <div id="consultations-container" class="consultations-container"></div>
+                </div>
+
+                <!-- Consultation Form -->
+                <div id="consultation-form-page" class="page-content">
+                    <form id="consultation-form" class="data-form">
+                        <h2>Hacer Consulta</h2>
+                        
+                        <fieldset>
+                            <legend>Datos del Vehiculo</legend>
+                            <div class="form-group">
+                                <label for="consultation-vehicle-type">Tipo de Vehiculo</label>
+                                <input type="text" id="consultation-vehicle-type" placeholder="Ej: Sedan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="consultation-brand">Marca</label>
+                                <input type="text" id="consultation-brand" placeholder="Ej: Toyota" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="consultation-year">Año del Vehiculo</label>
+                                <select id="consultation-year" required>
+                                    <option value="">-- Selecciona --</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="consultation-date">Fecha Deseada</label>
+                                <input type="date" id="consultation-date" required>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Crear Consulta</button>
+                            <button type="button" class="btn-secondary" id="cancel-consultation-btn">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Public Consultations Section -->
+        <div id="public-consultations-section" class="public-consultations-section">
+            <div class="public-card">
+                <h2>Todas las Consultas</h2>
+                <div id="public-consultations-container" class="public-consultations-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
