@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de turnos - Recall Insiders</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page page-calendar">
+        <header class="site-header hero-header">
+            <nav class="top-nav">
+                <a href="../index.html" class="logo">Recall Insiders</a>
+                <a href="agenda.html" class="nav-link active">Agenda</a>
+            </nav>
+            <div class="hero-copy">
+                <span class="eyebrow">Calendario de turnos</span>
+                <h1>Reservá tu turno y miralo en el calendario en tiempo real.</h1>
+                <p>Completá tus datos, elegí una agencia y la fecha. El turno se agrega automáticamente al calendario y queda visible para revisión.</p>
+                <div id="user-greeting" class="user-greeting"></div>
+            </div>
+        </header>
+
+        <main class="calendar-layout">
+            <section class="calendar-panel">
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <span id="calendar-month"></span>
+                        <div class="calendar-days">
+                            <span>Dom</span>
+                            <span>Lun</span>
+                            <span>Mar</span>
+                            <span>Mié</span>
+                            <span>Jue</span>
+                            <span>Vie</span>
+                            <span>Sáb</span>
+                        </div>
+                        <div class="calendar-grid" id="calendar-grid"></div>
+                    </div>
+                </div>
+                <div class="appointments-card">
+                    <h3>Turnos agendados</h3>
+                    <div id="appointments-list" class="appointments-list">
+                        <p class="empty-state">Aún no hay turnos programados.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-panel">
+                <div class="form-card">
+                    <div class="section-intro">
+                        <span class="eyebrow">Tus datos</span>
+                        <h2>Completá el formulario para reservar</h2>
+                        <p>Nombre, email, teléfono, vehículo y localidad. Luego elegí fecha y hora.</p>
+                    </div>
+                    <form id="booking-form">
+                        <label>
+                            Nombre completo
+                            <input type="text" id="booking-name" placeholder="Nombre completo" required>
+                        </label>
+                        <label>
+                            Email
+                            <input type="email" id="booking-email" placeholder="usuario@mail.com" required>
+                        </label>
+                        <label>
+                            Teléfono celular
+                            <input type="tel" id="booking-phone" placeholder="011 1234 5678" required>
+                        </label>
+                        <label>
+                            Agencia
+                            <select id="booking-agency" required>
+                                <option value="">Selecciona una agencia</option>
+                            </select>
+                        </label>
+                        <label>
+                            Dominio
+                            <input type="text" id="booking-license" placeholder="AB 123 CD" required>
+                        </label>
+                        <label>
+                            Chasis (opcional)
+                            <input type="text" id="booking-chassis" placeholder="Chasis">
+                        </label>
+                        <label>
+                            Marca y modelo
+                            <input type="text" id="booking-model" placeholder="Toyota Corolla" required>
+                        </label>
+                        <label>
+                            Provincia
+                            <input type="text" id="booking-province" placeholder="Provincia" required>
+                        </label>
+                        <label>
+                            Localidad
+                            <input type="text" id="booking-city" placeholder="Localidad" required>
+                        </label>
+                        <label>
+                            Fecha
+                            <input type="date" id="booking-date" required>
+                        </label>
+                        <label>
+                            Hora
+                            <input type="time" id="booking-time" required>
+                        </label>
+                        <button type="submit" class="primary-btn">Reservar turno</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Recall Insiders - Agenda de turnos y reservas para agencias automotrices.</p>
+        </footer>
+    </div>
+    <script src="js/calendar.js"></script>
+</body>
+</html>
